@@ -469,7 +469,7 @@ body {
     width: 100%;
     height: 350px;
     /* Aspect ratio for the photo box (e.g., 3:2 aspect ratio) */
-    background-image: url(/Images/Product1.heic);
+    background-image: url(Images/Product1.heic);
     background-size: cover;
     background-position: center;
     padding-bottom: 66.66%; 
