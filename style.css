@@ -238,6 +238,7 @@ body {
 .carousel-wrapper{
     overflow: hidden;
     width: 100%;
+    border-radius: 10px;
     padding:  0 20px;
     background-color: var(--yellow-accent);
 
@@ -280,6 +281,7 @@ body {
     height: 250px;
     background-color: var(--accent-color);
     margin-bottom: 15px;
+    border-radius: 5px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -424,7 +426,7 @@ body {
     }
     
     .left-arrow, .right-arrow {
-        display: none; /* Hide arrows on small screens as we allow wrapping/scrolling */
+         /* Hide arrows on small screens as we allow wrapping/scrolling */
     }
 
     /* Adjust font sizes for mobile */
