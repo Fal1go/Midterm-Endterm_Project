@@ -235,6 +235,14 @@ body {
     background-color: var(--accent-color);
 }
 
+.carousel-wrapper{
+    overflow: hidden;
+    width: 100%;
+    padding:  0 20px;
+    background-color: var(--yellow-accent);
+
+}
+
 .products-grid-container {
     display: flex;
     align-items: center;
@@ -243,14 +251,15 @@ body {
     position: relative;
 }
 
+
 .product-cards-container {
     display: flex;
     flex-wrap: nowrap;
     gap: 30px;
-    justify-content: space-between;
+    justify-content: flex-start;
     width: 100%;
-    overflow-x: auto;
     padding: 20px 0;
+    transition: transform 0.5s ease;
 }
 
 /* Style for individual product card */
@@ -260,7 +269,7 @@ body {
     padding: 20px;
     border-radius: 5px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    flex: 0 0 calc(25% - 22.5px); /* Four items per row on desktop (30px gap / 4 items * 3 gaps = 22.5px total gap to subtract) */
+    flex: 0 0 calc(25% - 22.5px);  /* Four items per row on desktop (30px gap / 4 items * 3 gaps = 22.5px total gap to subtract) */
     text-align: left;
     min-width: 250px; /* Minimum width for the card */
 }
@@ -392,14 +401,14 @@ body {
     }
 
     .product-cards-container {
-        flex-wrap: wrap; /* Allow cards to wrap on smaller screens */
-        justify-content: center;
+        /*flex-wrap: wrap;  Allow cards to wrap on smaller screens */
+        justify-content: flex-start;
         gap: 20px;
     }
 
     .product-card {
         flex: 0 0 calc(50% - 10px); /* Two items per row on mobile */
-        min-width: unset;
+        /* min-width: unset; */
         padding: 15px;
     }
 
@@ -983,34 +992,10 @@ body {
     transition: transform 0.3s ease;
 }
 
-/* Mobile Jq adjustments for animation on About Us page */
-@media (max-width: 768px) {
-
-.photo-small-bottom{
-    display: none;
-    position: relative;
-    top: 1000px
-}
-.photo-small-top{
-    display: none;
-    position: relative;
-    left: 300px
-}
-.photo-large{
-    display: none;
-    position: relative;
-    left: -300px
-}
-.about-content-panel{
-    display: none;
-    position: relative;
-    top: 1000px
-}
-}
 
 /* PC Jq adjustments for animation on About Us page */
 .photo-small-bottom, .photo-small-top, .photo-large{
-    transition: transform 0.8 ease-out ;
+    transition: transform 0.8s ease-out ;
 }
 
 .photo-small-bottom{
@@ -1032,4 +1017,27 @@ body {
     display: none;
     position: relative;
     right: -1000px
+}
+
+/* Mobile Jq adjustments for animation on About Us page */
+@media (max-width: 768px) {
+
+.photo-small-bottom{
+    position: relative;
+    top: 1000px;
+}
+.photo-small-top{
+    position: relative;
+    left: 300px;
+    top: 0px
+}
+.photo-large{
+    position: relative;
+    left: -300px;
+}
+.about-content-panel{
+    position: relative;
+    top: 1000px;
+    right: 0px
+}
 }

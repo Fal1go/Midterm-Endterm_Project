@@ -3,15 +3,17 @@ $(document).ready(function () {
     const diveInBtn = $("#diveInBtn");
     const homeText = $("#homeText");
     const socialIcons = $(".fa-brands");
+
     homeText.css({
         opacity: 1,
         transform: "translateX(0)"
-
     },500);
+
     diveInBtn.delay(700).animate({
         opacity: 1,
-        left: "0px",
+        left: "0px"
     },450);
+
     if($(window).width() > 768){
         diveInBtn
             .animate({padding: "7px 30px", fontSize: "3rem"},250)
