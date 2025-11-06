@@ -1,0 +1,1035 @@
+:root {
+    --main-color: Black;
+    --accent-color: white;
+    --secondary-accent: #e5e5e5;
+    --yellow-accent: #F1C40F;
+    --link-hover-color: #fffb00;
+    --font-size-large: 2rem;
+    --padding-page: 50px;
+}
+
+html, body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Dongle', sans-serif;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/*Navigation Styles*/
+.nav {
+    display: flex;
+    align-items: center;
+    background-color: var(--main-color);
+    padding: 10px var(--padding-page);
+    justify-content: space-between;
+}
+
+.nav .logo {
+    width: 120px; 
+    height: 120px;
+    object-fit: contain;
+}
+
+.nav ul {
+    display: flex;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    gap: 30px;
+    flex-grow: 1;
+    justify-content: flex-start;
+    margin-left: 50px;
+}
+
+.nav-link-style {
+    text-decoration: none;
+    color: var(--accent-color);
+    font-size: var(--font-size-large);
+    transition: color 0.3s ease;
+    padding: 5px 0;
+    white-space: nowrap;
+}
+
+.nav ul li a:hover,
+.nav ul li a.active {
+    color: var(--link-hover-color);
+}
+
+.nav .phone-number a {
+    padding: 0 20px;
+    text-decoration: none;
+    color: var(--accent-color);
+    font-size: var(--font-size-large);
+    white-space: nowrap;
+}
+
+.nav .phone-number a i {
+    margin-right: 5px;
+}
+
+/*Main Content*/
+.home-main {
+
+    background-color: #333; 
+    background-image: url('../images/bg.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    min-height: calc(100vh - 70px);
+    display: flex;
+    align-items: center;
+    color: white;
+    flex-grow: 1;
+}
+
+.hero-content h1 {
+    font-size: 7rem;
+    display: block;
+    padding: 10px 30px;        
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border-radius: 30px;
+    line-height: 80px;
+    margin-left: 50px;
+    color: var(--main-color);
+}
+
+.hero-content h1:hover{
+    cursor:default;
+}
+
+.button {
+    display: inline-block;
+    padding: 5px 70px;
+    margin-left: 50px;
+    background-color: var(--main-color);
+    color: var(--accent-color);
+    text-decoration: none;
+    font-size: var(--font-size-large);
+    font-weight: 700;
+    border-radius: 45px;
+    border: 2px solid var(--main-color);
+    transition: right 0.8 ease-out, background-color 0.3s ease;
+}
+
+.button:hover {
+    background-color: var(--accent-color);
+    color: var(--main-color);
+}
+
+/* Footer Styles */
+.footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px var(--padding-page);
+    background-color: var(--main-color);
+    color: var(--accent-color);
+    font-size: 1.5rem;
+    color: #fffb00;
+}
+
+.footer p {
+    margin: 0;
+}
+
+.footer .social-icons a {
+    color: var(--accent-color);
+    margin: 0 10px;
+    font-size: 2rem;
+    transition: color 0.3s ease;
+}
+
+.footer .social-icons a:hover,
+.phone-number a:hover {
+    color: var(--link-hover-color);
+}
+
+/* Mobile Styles */
+@media (max-width: 768px) {
+    :root {
+        --padding-page: 20px;
+        --font-size-large: 1.5rem;
+    }
+
+    /* Navigation Mobile */
+    .nav {
+        flex-wrap: wrap;
+        justify-content: center;
+        padding: 10px var(--padding-page);
+    }
+    
+    .nav .logo {
+        order: 1;
+        /* margin-right: auto; */
+    }
+
+    .nav .phone-number {
+        order:0;
+    }
+
+    .nav ul {
+        width: 100%;
+        justify-content: space-around;
+        gap: 10px;
+        margin: 10px 0;
+        border-top: 1px solid rgba(255, 255, 255, 0.2);
+        padding-top: 10px;
+    }
+
+    .nav-link-style,
+    .nav .phone-number a {
+        font-size: 1.35rem;
+    }
+
+    /* Main Content Mobile */
+    .hero-content h1 {
+        font-size: 5rem;
+        line-height: 50px;
+    }
+
+    .button {
+        font-size: 1.5rem;
+        padding: 7px 50px;
+    }
+    
+    .home-main {
+        min-height: 80vh;
+    }
+
+    /* Footer Mobile */
+    .footer {
+        flex-direction: column;
+        text-align: center;
+        padding: 15px 20px;
+        font-size: 1.2rem;
+    }
+
+    .footer .social-icons {
+        margin: 10px 0;
+    }
+    
+    .footer .social-icons a {
+        font-size: 1.5rem;
+    }
+    
+    .footer p {
+        order: 3;
+    }
+}
+
+/* Products Page Styles */
+
+.products-main {
+    flex-grow: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 30px var(--padding-page);
+    background-color: var(--accent-color);
+}
+
+.products-grid-container {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    max-width: 1200px;
+    position: relative;
+}
+
+.product-cards-container {
+    display: flex;
+    flex-wrap: nowrap;
+    gap: 30px;
+    justify-content: space-between;
+    width: 100%;
+    overflow-x: auto;
+    padding: 20px 0;
+}
+
+/* Style for individual product card */
+.product-card {
+    background-color: var(--secondary-accent);
+    border: 1px solid #ccc;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    flex: 0 0 calc(25% - 22.5px); /* Four items per row on desktop (30px gap / 4 items * 3 gaps = 22.5px total gap to subtract) */
+    text-align: left;
+    min-width: 250px; /* Minimum width for the card */
+}
+
+/* Placeholder for the product photo */
+.product-photo {
+    width: 100%;
+    height: 250px;
+    background-color: var(--accent-color);
+    margin-bottom: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #666;
+    font-size: 1.5rem;
+    font-weight: 700;
+}
+
+.product-name {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin: 0 0 5px 0;
+    color: var(--main-color);
+}
+
+.product-description {
+    font-size: 1.5rem;
+    margin: 0 0 15px 0;
+    color: #666;
+}
+
+.product-price {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin: 0 0 10px 0;
+    color: var(--main-color);
+}
+
+.photo-box1{
+    background-image: url(/Images/Product1.heic);
+    background-size: cover;
+    background-position: center;
+    
+}
+.photo-box2{
+    background-image: url(/Images/Product2.jpg);
+    background-size: cover;
+    background-position: center;
+}
+.photo-box3{
+    background-image: url(/Images/Product3.webp);
+    background-size: cover;
+    background-position: center;
+}
+.photo-box4{
+    background-image: url(/Images/Product4.heic);
+    background-size: cover;
+    background-position: center;
+}
+
+/* Quantity Select Dropdown */
+.quantity-select {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: var(--accent-color);
+    font-family: 'Dongle', sans-serif;
+    font-size: 1.8rem;
+    -webkit-appearance: none; /* Removes default browser styling for a cleaner look */
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'%3E%3Cpath fill='%23333' d='M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 6.096 6.924 4.682 8.338l4.611 4.612z'/%3E%3C/svg%3E"); /* Custom dropdown arrow */
+    background-repeat: no-repeat;
+    background-position: right 10px top 50%;
+    background-size: 1.5em;
+    cursor: pointer;
+}
+
+/* Add to Cart Button */
+.add-to-cart-btn {
+    width: 100%;
+    padding: 10px;
+    background-color: var(--accent-color); /* Light gray background matching the mockup */
+    color: var(--main-color); 
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 2.5rem;
+    font-family: 'Dongle', sans-serif;
+    font-weight: 700;
+    transition: background-color 0.3s ease;
+}
+
+.add-to-cart-btn:hover {
+    background-color: var(--yellow-accent);
+}
+
+/* Slider Arrows (for navigation if this were a slider) */
+.slider-arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--main-color);
+    font-size: 3rem;
+    cursor: pointer;
+    z-index: 10;
+    opacity: 0.7;
+    transition: opacity 0.3s ease;
+}
+
+.slider-arrow:hover {
+    opacity: 1;
+}
+
+.left-arrow {
+    left: 0;
+    transform: translate(-100%, -50%); /* Move arrow outside of grid */
+}
+
+.right-arrow {
+    right: 0;
+    transform: translate(100%, -50%); /* Move arrow outside of grid */
+}
+
+/* --- Mobile Styles for Products Page --- */
+@media (max-width: 768px) {
+    .products-main {
+        padding: 10px var(--padding-page);
+    }
+
+    .product-cards-container {
+        flex-wrap: wrap; /* Allow cards to wrap on smaller screens */
+        justify-content: center;
+        gap: 20px;
+    }
+
+    .product-card {
+        flex: 0 0 calc(50% - 10px); /* Two items per row on mobile */
+        min-width: unset;
+        padding: 15px;
+    }
+
+    .product-photo {
+        height: 150px;
+    }
+
+    .slider-arrow {
+        font-size: 2rem;
+        top: 20px; /* Move arrows to the top/side for better visibility on smaller screens */
+        transform: translateY(0);
+        position: static;
+    }
+    
+    .left-arrow, .right-arrow {
+        display: none; /* Hide arrows on small screens as we allow wrapping/scrolling */
+    }
+
+    /* Adjust font sizes for mobile */
+    .product-name, .product-price {
+        font-size: 2rem;
+    }
+
+    .quantity-select, .add-to-cart-btn {
+        font-size: 1.5rem;
+    }
+}
+
+/* Adjustments for a three-column layout on medium screens (e.g., tablets) */
+@media (min-width: 769px) and (max-width: 1100px) {
+    .product-card {
+        flex: 0 0 calc(33.333% - 20px); /* Three items per row */
+    }
+}
+
+/* --- Cart Page Styles --- */
+
+.cart-main {
+    flex-grow: 1;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start; /* Align to the top of the main area */
+    padding: 50px var(--padding-page);
+    background-color:var(--yellow-accent); /* Light gray background for the page content area */
+}
+
+.cart-container {
+    display: flex;
+    gap: 30px;
+    width: 100%;
+    max-width: 1100px;
+    background-color: var(--secondary-accent);
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Left Column: Photo and Button */
+.cart-product-detail {
+    flex: 0 0 55%; /* Takes up slightly more than half the width */
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.cart-product-photo {
+    width: 100%;
+    height: 350px;
+    /* Aspect ratio for the photo box (e.g., 3:2 aspect ratio) */
+    background-image: url(/Images/Product1.heic);
+    background-size: cover;
+    background-position: center;
+    padding-bottom: 66.66%; 
+    background-color: var(--accent-color);
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--main-color);
+    font-size: 2rem;
+    font-weight: 700;
+    position: relative; /* Needed for padding-bottom height trick */
+    padding: 0;
+}
+
+.cart-product-photo::before {
+    /* content: "Product's Photo"; */
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.cart-page-button {
+    /* Reusing the .button style, but changing position */
+    align-self: flex-start;
+    margin: 0;
+    padding: 10px 30px;
+    font-size: 2rem;
+    border-radius: 5px;
+    font-weight: 400; /* Lighter font weight for the button text */
+    background-color: var(--secondary-accent);
+    color: var(--main-color);
+    border: 1px solid var(--main-color);
+}
+
+.cart-page-button:hover {
+    background-color: var(--main-color);
+    color: var(--link-hover-color);
+}
+
+/* Right Column: Info and Status */
+.cart-info-panel {
+    flex: 1; /* Takes the remaining space */
+    background-color: var(--accent-color);
+    padding: 30px;
+    border-radius: 10px;
+}
+
+.cart-product-name {
+    font-size: 3.5rem;
+    font-weight: 700;
+    margin: 0 0 20px 0;
+    color: var(--main-color);
+}
+
+.cart-description-box {
+    margin-bottom: 30px;
+}
+
+.description-title {
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 5px;
+}
+
+.product-description-area {
+    background-color: var(--secondary-accent);
+    padding: 15px;
+    border-radius: 5px;
+    height: 120px; /* Fixed height matching the mockup's box */
+    font-size: 1.8rem;
+    color: #666;
+}
+
+.cart-status-box {
+    border-top: 1px solid #ccc;
+    padding-top: 20px;
+}
+
+.status-title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin: 0 0 10px 0;
+}
+
+.cart-status-box p {
+    font-size: 1.8rem;
+    margin: 5px 0;
+}
+
+/* --- Mobile Styles for Cart Page --- */
+@media (max-width: 768px) {
+    .cart-main {
+        padding: 20px var(--padding-page);
+    }
+    
+    .cart-container {
+        flex-direction: column; /* Stacks the columns vertically */
+        padding: 15px;
+        gap: 20px;
+    }
+
+    .cart-product-detail {
+        flex: auto;
+    }
+    
+    .cart-info-panel {
+        padding: 15px;
+    }
+
+    .cart-product-name {
+        font-size: 2.5rem;
+    }
+
+    .status-title {
+        font-size: 2rem;
+    }
+
+    .description-title,
+    .product-description-area,
+    .cart-status-box p {
+        font-size: 1.5rem;
+    }
+
+    .cart-page-button {
+        font-size: 1.5rem;
+    }
+}
+
+/* --- About Us Page Styles --- */
+
+.about-main {
+    flex-grow: 1;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 50px var(--padding-page);
+    background-color: var(--accent-color);
+}
+
+.about-container {
+    display: flex;
+    gap: 30px;
+    width: 100%;
+    max-width: 1200px;
+}
+
+/* Left/Middle Section: Photo Grid (using CSS Grid) */
+.about-photos-grid {
+    flex: 0 0 65%; /* Takes about 2/3 of the container width */
+    display: grid;
+    grid-template-columns: 2fr 1fr; /* Large photo takes 2 parts, small photos take 1 part */
+    grid-template-rows: 1fr 1fr;
+    gap: 20px;
+    height: 700px; /* Fixed height for the grid container */
+}
+
+/* Photo Box Styling (Placeholder) */
+.photo-large, 
+.photo-small-top, 
+.photo-small-bottom {
+    background-color: var(--yellow-accent); /* Gray background matching the mockup */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--main-color);
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.photo-large {
+    background-image: url(/Images/Product1.heic);
+    background-size: cover;
+    background-position: center;
+    grid-row: 1 / 3; /* Spans both rows, creating the tall photo box */
+    grid-column: 1 / 2;
+}
+
+.photo-small-top {
+    background-image: url(/Images/Product1.heic);
+    background-size: cover;
+    background-position: center;
+    grid-row: 1 / 2;
+    grid-column: 2 / 3;
+}
+
+.photo-small-bottom {
+    background-image: url(/Images/Product1.heic);
+    background-size: cover;
+    background-position: center;
+    grid-row: 2 / 3;
+    grid-column: 2 / 3;
+}
+
+/* Right Section: Text Content */
+.about-content-panel {
+    flex: 1; /* Takes the remaining space (about 1/3) */
+    background-color: var(--yellow-accent);
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+}
+
+.about-title {
+    font-size: 3.5rem;
+    font-weight: 700;
+    margin: 0 0 20px 0;
+    color: var(--main-color);
+    text-align: center;
+}
+
+.about-description-box {
+    background-color: var(--accent-color);
+    padding: 15px;
+    border-radius: 5px;
+    margin-bottom: 20px;
+    flex-grow: 1; /* Allows it to take up available vertical space */
+}
+
+.about-description-box ul {
+    list-style-type: disc;
+    padding-left: 20px;
+    margin: 0;
+}
+
+.about-description-box ul li {
+    font-size: 1.8rem;
+    line-height: 1.2;
+    margin-bottom: 5px;
+}
+
+
+.other-description-title {
+    font-size: 1.8rem;
+    margin: 0 0 5px 0;
+    color: var(--main-color);
+}
+
+.description-area {
+    background-color: var(--accent-color);
+    padding: 15px;
+    border-radius: 5px;
+    height: 150px;
+}
+
+/* --- Mobile Styles for About Us Page --- */
+@media (max-width: 768px) {
+    .about-main {
+        padding: 20px var(--padding-page);
+    }
+    
+    .about-container {
+        flex-direction: column; /* Stack all major columns vertically */
+        gap: 20px;
+    }
+
+    .about-photos-grid {
+        flex: auto;
+        grid-template-columns: 1fr 1fr; /* Two equal columns for photos */
+        grid-template-rows: auto auto;
+        height: auto; /* Allow height to adjust */
+    }
+
+    /* Reset grid area placement for mobile stacking */
+    .photo-large {
+        grid-row: 1 / 2; /* Top-left */
+        grid-column: 1 / 2;
+        min-height: 250px;
+    }
+    .photo-small-top {
+        grid-row: 1 / 2; /* Top-right */
+        grid-column: 2 / 3;
+        min-height: 250px;
+    }
+    .photo-small-bottom {
+        grid-row: 2 / 3; /* Bottom-span (new position) */
+        grid-column: 1 / 3;
+        min-height: 250px;
+    }
+
+    .about-content-panel {
+        padding: 15px;
+    }
+
+    .about-title {
+        font-size: 2.5rem;
+    }
+    .about-description-box ul li {
+        font-size: 1.5rem;
+    }
+    .other-description-title {
+        font-size: 1.5rem;
+    }
+    .description-area {
+        height: 100px;
+    }
+}
+
+/* --- Contacts Page Styles --- */
+
+.contacts-main {
+    flex-grow: 1;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 50px var(--padding-page);
+    background-color: var(--secondary-accent);
+}
+
+.contacts-container {
+    display: flex;
+    gap: 30px;
+    width: 100%;
+    max-width: 1300px;
+}
+
+/* Left Section: Map and Info */
+.contacts-map-info {
+    flex: 0 0 65%; /* Takes about 2/3 of the container width */
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.map-placeholder {
+    width: 100%;
+    /* Use a fixed height or padding-bottom for aspect ratio if needed,
+       but a fixed height works well for a map area */
+    height: 500px; 
+    background-color: var(--accent-color);
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    
+    /* Center placeholder text */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: var(--main-color);
+    font-weight: 700;
+}
+
+.map-title {
+    font-size: 3rem;
+    margin: 0;
+}
+
+.map-location {
+    font-size: 2rem;
+    margin: px 0 0 0;
+}
+
+.contact-cta {
+    font-size: 5rem;
+    line-height: 50px;
+    font-weight: 700;
+    color: var(--main-color);
+    margin: 0;
+}
+
+/* Right Section: Contact Form Panel */
+.contact-form-panel {
+    flex: 1; /* Takes the remaining space (about 1/3) */
+    background-color: var(--yellow-accent); /* Using yellow accent color */
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    height: fit-content; /* Shrinks the background to fit the form content */
+}
+
+.form-title {
+    font-size: 3.5rem;
+    font-weight: 700;
+    margin: 0 0 30px 0;
+    color: var(--main-color);
+    text-align: center;
+}
+
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    
+    gap: 20px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.form-group label {
+    font-size: 2.5rem;
+    font-weight: 400;
+    color: var(--main-color);
+}
+
+.form-group input {
+    padding: 15px 20px;
+    border: none;
+    border-radius: 40px; 
+    font-family: 'Dongle', sans-serif;
+    font-size: 2rem;
+    font-weight: 400;
+    color: var(--main-color);
+    background-color: var(--accent-color);
+    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+
+.submit-btn {
+    align-self: center;
+    font-family: 'Dongle', sans-serif;
+    margin-left: -10px;
+    margin-top: 10px;
+    padding: 10px 50px;
+    background-color: var(--accent-color);
+    color: var(--main-color);
+    border: none;
+    cursor: pointer;
+    font-size: 2.5rem;
+    font-weight: 700;
+    border-radius: 40px;
+    transition: background-color 0.3s ease;
+}
+
+.submit-btn:hover {
+    background-color: var(--main-color);
+    color: var(--accent-color);
+}
+
+/* Mobile Styles for Contacts Page */
+@media (max-width: 768px) {
+    .contacts-main {
+        padding: 20px var(--padding-page);
+    }
+    
+    .contacts-container {
+        flex-direction: column; /* Stack map and form vertically */
+        gap: 20px;
+    }
+
+    .contacts-map-info {
+        flex: auto;
+        gap: 20px;
+    }
+
+    .map-placeholder {
+        height: 300px; /* Shorter map placeholder on mobile */
+    }
+    
+    .map-title {
+        font-size: 2.5rem;
+    }
+
+    .map-location {
+        font-size: 1.5rem;
+    }
+
+    .contact-cta {
+        font-size: 2.5rem;
+        text-align: center;
+    }
+
+    .contact-form-panel {
+        padding: 20px;
+    }
+
+    .form-title {
+        font-size: 2.5rem;
+        margin-bottom: 20px;
+    }
+
+    .form-group label {
+        font-size: 2rem;
+    }
+    
+    .form-group input {
+        font-size: 1.5rem;
+        padding: 10px 15px;
+    }
+
+    .submit-btn {
+        font-size: 2rem;
+        padding: 7px 40px;
+    }
+}
+
+/* JQuery settings */
+
+/* Home page changes */
+#diveInBtn{
+    position: absolute;
+    left:-400px;
+    opacity: 0;
+}
+
+#homeText{
+    opacity: 0;
+    transform: translateX(-1000px);
+    transition: all 0.8s ease-out;
+}
+
+.fa-brands {
+    transition: transform 0.3s ease;
+}
+
+/* Mobile Jq adjustments for animation on About Us page */
+@media (max-width: 768px) {
+
+.photo-small-bottom{
+    display: none;
+    position: relative;
+    top: 1000px
+}
+.photo-small-top{
+    display: none;
+    position: relative;
+    left: 300px
+}
+.photo-large{
+    display: none;
+    position: relative;
+    left: -300px
+}
+.about-content-panel{
+    display: none;
+    position: relative;
+    top: 1000px
+}
+}
+
+/* PC Jq adjustments for animation on About Us page */
+.photo-small-bottom, .photo-small-top, .photo-large{
+    transition: transform 0.8 ease-out ;
+}
+
+.photo-small-bottom{
+    display: none;
+    position: relative;
+    top: 1000px
+}
+.photo-small-top{
+    display: none;
+    position: relative;
+    top: -1000px
+}
+.photo-large{
+    display: none;
+    position: relative;
+    left: -1000px
+}
+.about-content-panel{
+    display: none;
+    position: relative;
+    right: -1000px
+}
