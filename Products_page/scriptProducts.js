@@ -40,5 +40,12 @@ $(document).ready(function () {
             $(".prev").click();
         }
     });
+
+    $(".gallery-card").on("click", function() {
+        const src = $(this).data("src"); // gets the URL from data-src
+        $("#lightboxImage").attr("src", src);
+        const modal = new bootstrap.Modal(document.getElementById("lightboxModal"));
+        modal.show();
+    });
       
 });

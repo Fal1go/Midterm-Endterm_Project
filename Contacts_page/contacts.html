@@ -26,12 +26,14 @@
     </nav>
 
     <main class="main contacts-main">
+        
         <div class="contacts-container">
+            
             <div class="contacts-map-info">
-                <div class="map-placeholder">
+                <iframe class="map-placeholder" src="https://widgets.2gis.com/widget?type=map&url=https://go.2gis.com/6bQg1">
                     <p class="map-title">2gis map</p>
                     <p class="map-location">Location</p>
-                </div>
+                </iframe>
                 <h2 class="contact-cta">Leave out a form so we can contact you!</h2>
             </div>
 
@@ -48,6 +50,10 @@
                         <input type="email" id="email" name="email" placeholder="Email...">
                     </div>
                     <div class="form-group">
+                        <label for="confirm-email">Confirm Your Email</label>
+                        <input type="email" id="confirm-email" name="email" placeholder="Confirm...">
+                    </div>
+                    <div class="form-group">
                         <label for="phone">Phone number</label>
                         <input type="tel" id="phone" name="phone" placeholder="Phone number...">
                     </div>
@@ -55,6 +61,62 @@
                 </form>
                 <p id="message"></p>
             </div>
+        </div>
+            
+        <div class="schedule-table-panel">
+            <table class="schedule-table">
+                <caption>Working Schedule</caption>
+                <thead>
+                    <tr>
+                        <th>Day</th>
+                        <th>Mon</th>
+                        <th>Tue</th>
+                        <th>Wed</th>
+                    </tr>
+                </thead>
+                <tbody class="first-second-rows">
+                    <tr>
+                        <td>Working Hours</td>
+                        <td>9:00 AM - 6:00 PM</td>
+                        <td>9:00 AM - 6:00 PM</td>
+                        <td>9:00 AM - 6:00 PM</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <table class="schedule-table">
+                <thead>
+                    <tr>
+                        <th>Day</th>
+                        <th>Thu</th>
+                        <th>Fri</th>
+                        <th>Sat</th>
+                    </tr>
+                </thead>
+                <tbody class="first-second-rows">
+                    <tr>
+                        <td>Working Hours</td>
+                        <td>9:00 AM - 6:00 PM</td>
+                        <td>9:00 AM - 6s:00 PM</td>
+                        <td>10:00 AM - 2:00 PM</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <table class="schedule-table">
+                <thead>
+                    <tr>
+                        <th>Day</th>
+                        <th>Sun</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Working Hours</td>
+                        <td class="closed">Closed</td>
+                    </tr>
+                </tbody>
+            </table>
         </div>
     </main>
 
